@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h3 class="verticalLine">
+            <span class="text-style text-muted">Contact details</span>
+        </h3>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="showEdit">
+        <app-button *ngIf="!isEdited" [btnText]="'Edit'" [iconClass]="'glyphicon glyphicon-pencil'" [showIcon]="true" [btnClass]="'btn btn-link'" [wrapperClass]="'text-left button-style'" (clickEvent)="editData($event)"></app-button>
+        <app-button *ngIf="isEdited" [btnText]="'Save'" [iconClass]="'glyphicon glyphicon-ok'" [showIcon]="true" [btnClass]="'btn btn-success'" [wrapperClass]="'text-left button-style'" (clickEvent)="saveData($event)"></app-button>
+    </div>
+
+</div>
+<h5 class="left-space">*Marked fields must be completed, and can only be completed in English.</h5>
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-muted">
+        Given names
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-muted" *ngIf="!isEdited">
+        {{name.givenName}}
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-muted" *ngIf="isEdited">
+        <input type="text" #gname [(ngModel)]="name.givenName" (keyup)="checkData(gname.value,'givenName')"/>
+        <span class="text-danger" *ngIf="requireGivenName"> *Required</span>
+    </div>
+</div>
+<div class="row top-space">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-muted">
+        Family name
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-muted" *ngIf="!isEdited">
+        {{name.familyName}}
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-muted" *ngIf="isEdited">
+        <input type="text" #fname [(ngModel)]="name.familyName" (keyup)="checkData(fname.value,'familyName')"/>
+        <span class="text-danger" *ngIf="requireFamilyName"> *Required</span>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+<h3 class="text-muted"> Review and confirm</h3>
+<app-contact [showEdit]="true" (editEvent)="updateData($event)"></app-contact>
+<app-button [btnText]="'Buy now'" [isDisabled]="disableBtn" [btnClass]="'btn btn-danger'" [wrapperClass]="'text-right'" (clickEvent)="route($event)"></app-button>

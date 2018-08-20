@@ -1,0 +1,10 @@
+<div class="ack">
+<div class="panel panel-default">
+    <div class="panel-body">
+    <div><i class="glyphicon glyphicon-ok-circle"></i><span> Congratulations!</span></div>
+      <span>Your insurance purchase is confirmed on </span> <span>{{date | amDateFormat:'dddd, Do MMMM YYYY'}}.</span>
+      <div><span>A confirmation email is on its way.</span></div>
+    </div>
+  </div>
+</div>
+<app-button [btnText]="'Buy new policy'" [btnClass]="'btn btn-danger'" [wrapperClass]="'text-center'" (clickEvent)="route($event)"></app-button>

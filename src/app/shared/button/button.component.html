@@ -1,0 +1,5 @@
+<div [ngClass]="wrapperClass">
+    <button type="button" [ngClass]="btnClass" (click)="buttonClick()" [disabled]="isDisabled">
+        <i *ngIf="showIcon" [ngClass]="iconClass" ></i> {{btnText}}
+    </button>
+</div>
